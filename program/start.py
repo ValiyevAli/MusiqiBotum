@@ -29,11 +29,11 @@ __python_version__ = f"{version_info[0]}.{version_info[1]}.{version_info[2]}"
 START_TIME = datetime.utcnow()
 START_TIME_ISO = START_TIME.replace(microsecond=0).isoformat()
 TIME_DURATION_UNITS = (
-    ("week", 60 * 60 * 24 * 7),
-    ("day", 60 * 60 * 24),
-    ("hour", 60 * 60),
-    ("min", 60),
-    ("sec", 1),
+    ("həftə", 60 * 60 * 24 * 7),
+    ("gün", 60 * 60 * 24),
+    ("saat", 60 * 60),
+    ("dəqiqə", 60),
+    ("saniyə", 1),
 )
 
 
@@ -53,38 +53,28 @@ async def _human_time_duration(seconds):
 )
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f""" **Welcome {message.from_user.mention()} !**\n
-❣️ [{UPDATES_CHANNEL}](https://t.me/{UPDATES_CHANNEL}) **Allows you to play music and video on groups through the new Telegram's video chats!**
+        f""" Salam {message.from_user.mention()}! **Snactus ⚡️ sizi salamlayır.**\n
+Botu qrupa əlavə edərək həm musiqi dinləyə həmdə video və ya kino izləyə bilərsiz.
 
 
-
-💫 **To know how to use this bot, please click on the » ❓ Basic Guide button!**
+ **Botun komandaları haqqında bilgi almaq üçün Komandalar butonuna basın!**
 """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "➕ Add me to your Group ➕",
+                        "➕ Məni qrupa əlavə et",
                         url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                     )
                 ],
-                [InlineKeyboardButton("❓ Basic Guide", callback_data="cbhowtouse")],
-                [
-                    InlineKeyboardButton("📚 Commands", callback_data="cbcmds"),
-                    InlineKeyboardButton("🇮🇳 Owner", url=f"https://t.me/xAbhish3k"),
-                ],
+                
                 [
                     InlineKeyboardButton(
-                        "👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}"
+                        "✅ Dəstək qrupu", url=f"https://t.me/{GROUP_SUPPORT}"
                     ),
                     InlineKeyboardButton(
-                        "📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "📣 Rəsmi kanal", url=f"https://t.me/{UPDATES_CHANNEL}"
                     ),
-                ],
-                [
-                    InlineKeyboardButton(
-                        "Help", url="https://t.me/warbotzsupport"
-                    )
                 ],
             ]
         ),
