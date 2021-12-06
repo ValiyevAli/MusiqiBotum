@@ -22,8 +22,8 @@ from pytgcalls.types.stream import StreamAudioEnded, StreamVideoEnded
 keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton(text="• Mᴇɴᴜ", callback_data="cbmenu"),
-                InlineKeyboardButton(text="• Cʟᴏsᴇ", callback_data="cls"),
+                InlineKeyboardButton(text="❄️ Menyu", callback_data="cbmenu"),
+                InlineKeyboardButton(text="🎄 Bağla", callback_data="cls"),
             ]
         ]
     )
@@ -110,10 +110,10 @@ async def stream_end_handler(_, u: Update):
         print(chat_id)
         op = await skip_current_song(chat_id)
         if op==1:
-           await bot.send_message(chat_id, "✅ __Queues__ **is empty**\n\n» **userbot leaving video chat**")
+           await bot.send_message(chat_id, "✅ __Sırada__ **heç bir musiqi olmadığı üçün asistan səsli söhbətdən çıxdı.**")
         elif op==2:
-           await bot.send_message(chat_id, "❌ **an error occurred**\n\n» **Clearing** __Queues__ **and leaving video chat.**")
+           await bot.send_message(chat_id, "❌ xəta asistan səsli söhbətdən çıxdı. Dəstək üçün @SnactusSup qrupuna girin.")
         else:
-         await bot.send_message(chat_id, f"💡 **Streaming next track**\n\n🏷 **Name:** [{op[0]}]({op[1]}) | `{op[2]}`\n💭 **Chat:** `{chat_id}`", disable_web_page_preview=True, reply_markup=keyboard)
+         await bot.send_message(chat_id, f"💡 **Növbətiyə keçid edildi**\n\n🏷 **Adı:** [{op[0]}]({op[1]}) | `{op[2]}`\n💭 **Chat ID:** `{chat_id}`", disable_web_page_preview=True, reply_markup=keyboard)
     else:
        pass
