@@ -67,11 +67,6 @@ Botu qrupa əlavə edərək həm musiqi dinləyə həmdə video və ya kino izl�
                         url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                     )
                 ],
-                [InlineKeyboardButton("❓ Basic Guide", callback_data="cbhowtouse")],
-                [
-                    InlineKeyboardButton("📚 Commands", callback_data="cbcmds"),
-                    InlineKeyboardButton("🇮🇳 Owner", url=f"https://t.me/xAbhish3k"),
-                ],
                 [
                     InlineKeyboardButton(
                         "✅ Dəstək qrupu", url=f"https://t.me/{GROUP_SUPPORT}"
@@ -79,11 +74,6 @@ Botu qrupa əlavə edərək həm musiqi dinləyə həmdə video və ya kino izl�
                     InlineKeyboardButton(
                         "📣 Rəsmi kanal", url=f"https://t.me/{UPDATES_CHANNEL}"
                     ),
-                ],
-                [
-                    InlineKeyboardButton(
-                        "Help", url="https://t.me/warbotzsupport"
-                    )
                 ],
             ]
         ),
